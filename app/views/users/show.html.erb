@@ -1,11 +1,17 @@
-<h2> <%= @user.username %>'s' bucket list: </h2>
+<div class="arrange">
+
+<h2><%=@user.username %>'s bucket list: </h2>
+<hr />
 
 <ol>
 <% @user.goals.each do |goal| %>
     <li><%= goal.body %> 
       <% if logged_in? and (current_user == goal.creator) %> 
-        <%= link_to 'Delete', goal_path(goal), method: 'delete' %>
+        <%= link_to goal_path(goal), method: 'delete' do %>
+        <span class='glyphicon glyphicon-remove'></span>
+        <% end %>
       <% end %>
     </li>
 <% end %>
 </ol>
+</div>

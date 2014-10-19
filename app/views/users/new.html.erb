@@ -1,16 +1,21 @@
-<div class="welcome frontpage">
-  <h2>Register</h2>
+<% if !logged_in? %>
 
-  <%= form_for @user do |f| %>
-     <div class='control-group'>
-       <%= f.label :username %>
-       <%= f.text_field :username %>
-     </div>
-     <div class='control-group'>
-       <%= f.label :password %>
-       <%= f.password_field :password %>
-     </div>
-     <br />
-      <%= f.submit "Register", class: 'btn btn-success' %>
-  <% end %>
+<div class="welcome frontpage">
+  <h2>Register:</h2>
+
+    <%= form_for @user do |f| %>
+       <div class='control-group'>
+         <%= f.label :username %>
+         <%= f.text_field :username %>
+       </div>
+       <div class='control-group'>
+         <%= f.label :password %>
+         <%= f.password_field :password %>
+       </div>
+       <br />
+        <%= f.submit "Register", class: 'btn btn-success' %>
+    <% end %>
+
 </div>
+
+<% end %>

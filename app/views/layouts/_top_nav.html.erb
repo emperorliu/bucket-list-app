@@ -1,10 +1,15 @@
 <% if logged_in? %>
-  <%= link_to 'Log Out', logout_path, class: 'btn btn-small' %>
+  <ul class="nav nav-pills">
 
-  <%= link_to 'Cheer others!', users_path, class: 'btn btn-small' %>
+    <li><%= link_to 'Home', user_path(current_user), class: 'btn btn-small' %></li>
 
-  <%= link_to "New Goal", new_goal_path, class: 'btn btn-success btn-small' %>
+    <li><%= link_to 'Cheer others!', users_path, class: 'btn btn-small' %></li>
 
-  <%= link_to 'Your profile', user_path(current_user), class: 'btn btn-small' %>
+    <li><%= link_to "New Goal", new_goal_path, class: 'btn btn-small' %></li>
+
+    <li><%= link_to 'Log Out', logout_path, class: 'btn btn-small' %></li>
+
+    <hr />
+    <hr />
 <% end %>
 

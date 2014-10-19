@@ -1,7 +1,9 @@
-<h2>Click on any user to check out their bucket list:</h2>
+<div class="arrange">
+<%= render "shared/content_title", title: "Click on any user to check out their bucket list:" %>
 
 <% @users.each do |user| %>
   <ul>
     <li><%= link_to "#{user.username}", user_path(user) %></li>
   </ul>
 <% end %>
+</div>
