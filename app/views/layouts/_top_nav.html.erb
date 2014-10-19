@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <%= link_to 'Log Out', logout_path, class: 'btn btn-small' %>
+
+  <%= link_to 'Cheer others!', users_path, class: 'btn btn-small' %>
+
+  <%= link_to "New Goal", new_goal_path, class: 'btn btn-success btn-small' %>
+
+  <%= link_to 'Your profile', user_path(current_user), class: 'btn btn-small' %>
+<% end %>
+

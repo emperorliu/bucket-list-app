@@ -1,0 +1,22 @@
+<% if !logged_in? %>
+
+<div class="frontpage">
+<div class="welcome" >
+
+  <h1>Welcome!</h1>
+
+  <div class="btn-group">
+      <%= link_to "Log In", login_path, class: 'btn btn-primary btn-small' %>
+  </div>
+
+  <div class="btn-group">
+      <%= link_to "Register", register_path, class: 'btn btn-success btn-small' %>
+  </div>
+</div>
+
+<% else %>
+  <h4>Hey there, welcome to the bucket list app! Please click below to begin adding in your goals!<h4>
+  <%= link_to "New Goal", new_goal_path %>
+</div>
+
+<% end %>

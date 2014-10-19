@@ -1,0 +1,7 @@
+<h2>Click on any user to check out their bucket list:</h2>
+
+<% @users.each do |user| %>
+  <ul>
+    <li><%= link_to "#{user.username}", user_path(user) %></li>
+  </ul>
+<% end %>
