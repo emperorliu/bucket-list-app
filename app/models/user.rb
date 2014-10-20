@@ -1,4 +1,6 @@
-class User < ActiveRecord::Base  
+class User < ActiveRecord::Base
+  include SluggableJeff1
+
   has_many :goals
   has_many :cheers
 
@@ -6,4 +8,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
   # valdiates :password, presence: true, on: :create, length: {minimum: 3}
+
+  sluggable_column :username
+
 end
