@@ -7,6 +7,10 @@ Rails.application.routes.draw do
  get '/register', to: 'users#new'
  
  resources :users, only: [:create, :index, :show]
- resources :goals, only: [:new, :destroy, :edit, :update, :create]
+ resources :goals, only: [:new, :destroy, :edit, :update, :create] do
+  member do
+   post :cheer
+  end
+ end
  
 end

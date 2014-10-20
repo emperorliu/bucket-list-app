@@ -1,5 +1,6 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base  
   has_many :goals
+  has_many :cheers
 
   has_secure_password validations: false
 

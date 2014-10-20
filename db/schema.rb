@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015010117) do
+ActiveRecord::Schema.define(version: 20141020232221) do
+
+  create_table "cheers", force: true do |t|
+    t.boolean  "cheer"
+    t.integer  "user_id"
+    t.string   "cheerable_type"
+    t.integer  "cheerable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "goals", force: true do |t|
     t.text     "body"
@@ -26,6 +35,7 @@ ActiveRecord::Schema.define(version: 20141015010117) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
 end

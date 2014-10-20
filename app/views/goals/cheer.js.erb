@@ -1,0 +1,5 @@
+<% if @cheer.valid? %>
+  $("#goal_<%=@goal.id%>_cheers").html("........<%=@goal.total_cheers%> cheers")
+<% else %>
+  alert("You can only cheer once!");
+<% end %>

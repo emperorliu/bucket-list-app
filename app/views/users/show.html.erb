@@ -7,9 +7,19 @@
 <% @user.goals.each do |goal| %>
     <li><%= goal.body %> 
       <% if logged_in? and (current_user == goal.creator) %> 
+        <span>
+        <% if goal.total_cheers != 0 %>
+          ........<%= goal.total_cheers %> cheers
+          <% end %>
+        </span>
         <%= link_to goal_path(goal), method: 'delete' do %>
         <span class='glyphicon glyphicon-remove'></span>
         <% end %>
+      <% else %>
+        <span id='goal_<%=goal.id%>_cheers'> ........<%= goal.total_cheers %> cheers </span>
+        <%= link_to cheer_goal_path(goal, cheer: true), remote: true, method: 'post' do %>
+        <span class='glyphicon glyphicon-thumbs-up'></span>
+        <% end%>
       <% end %>
     </li>
 <% end %>
