@@ -19,10 +19,11 @@
         <span class='glyphicon glyphicon-remove'></span>
         <% end %>
       <% else %>
-        <span id='goal_<%=goal.id%>_cheers'> ........<%= goal.total_cheers %> cheers </span> from
+        <span id='goal_<%=goal.id%>_cheers'> ........<%= goal.total_cheers %> cheers from
           <% goal.cheers.each do |cheer| %>
           <%= link_to cheer.creator.username, user_path(cheer.creator.username) %>
-          <% end %>
+          <% end %> 
+        </span>
         <%= link_to cheer_goal_path(goal, cheer: true), remote: true, method: 'post' do %>
         <span class='glyphicon glyphicon-thumbs-up'></span>
         <% end%>
