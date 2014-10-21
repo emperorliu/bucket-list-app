@@ -11,7 +11,7 @@
         <% if goal.total_cheers != 0 %>
           ........<%= goal.total_cheers %> cheers from
             <% goal.cheers.each do |cheer| %>
-            <%= link_to cheer.creator.username, user_path(cheer.creator.username) %>
+            <%= link_to cheer.creator.username, user_path(cheer.creator.username) %>,
             <% end %>
           <% end %>
         </span>
